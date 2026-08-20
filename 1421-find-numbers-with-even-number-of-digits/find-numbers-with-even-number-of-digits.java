@@ -1,22 +1,15 @@
+//approach 2 using string function
 class Solution {
-    public boolean evendigit(int num)
-    {
-        int digit=0;
-        while(num!=0)
-        {
-            num=num/10;
-            digit++;
-        }
-        return digit%2==0;
-        
-    }
     public int findNumbers(int[] nums) {
-        int count=0;
-        for(int i=0;i<nums.length;i++)
+        int evencount=0;
+        for(int num:nums)
         {
-            if(evendigit(nums[i]))
-            count++;
+            int len=String.valueOf(num).length();
+            if(len%2==0)
+            {
+                evencount++;
+            }
         }
-        return count;
+        return evencount;
     }
 }
