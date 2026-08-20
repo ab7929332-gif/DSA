@@ -1,15 +1,11 @@
-//approach 2 using string function
 class Solution {
     public int findNumbers(int[] nums) {
-        int evencount=0;
-        for(int num:nums)
-        {
-            int len=String.valueOf(num).length();
-            if(len%2==0)
-            {
-                evencount++;
+        int count = 0;
+        for(int i = 0;i<nums.length;i++){
+            if((nums[i]>=10 && nums[i]<=99) || (nums[i]>=1000 && nums[i]<=9999) || (nums[i] == 100000)){
+                count++;
             }
         }
-        return evencount;
+        return count;
     }
 }
